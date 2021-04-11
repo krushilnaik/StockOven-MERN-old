@@ -5,6 +5,7 @@ import '../scss/App.scss';
 import GraphComponent from './GraphComponent';
 import RedditComponent from './RedditComponent';
 import YahooComponent from './YahooComponent';
+import SearchBar from './SearchBar';
 
 function App() {
 	return (
@@ -15,9 +16,7 @@ function App() {
 					<span id='brand-name'>StockOven</span>
 				</div>
 
-				<div className='right'>
-					<input type='text' id='stock-search' />
-				</div>
+				<SearchBar />
 			</nav>
 
 			<div className='App'>
