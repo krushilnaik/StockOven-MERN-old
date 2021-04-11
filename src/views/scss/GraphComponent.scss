@@ -1,0 +1,20 @@
+#graph {
+	grid-area: graph;
+	background-color: steelblue;
+	display: grid;
+	grid-template-rows: auto 4.5em;
+	justify-content: stretch;
+	align-items: stretch;
+
+	.apex-chart {
+		background-color: darkred;
+		border-radius: 10px;
+		padding: 1.5%;
+	}
+
+	.toggles {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+}

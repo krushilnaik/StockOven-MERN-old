@@ -1,11 +1,26 @@
 #reddit {
 	grid-area: reddit;
+	display: grid;
+	grid-template-rows: 3em auto;
+	background-color: crimson;
+	align-items: center;
+	justify-content: stretch;
 
-	.flair-button {
-		border-radius: 15px;
-		background-color: antiquewhite;
-		width: fit-content;
-		padding: 6px 10px;
-		color: honeydew;
+	.navigation {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+
+		.flair-button {
+			border-radius: 15px;
+			background-color: antiquewhite;
+			width: fit-content;
+			padding: 6px 10px;
+			color: honeydew;
+		}
+	}
+
+	.viewport {
+		justify-self: center;
 	}
 }
