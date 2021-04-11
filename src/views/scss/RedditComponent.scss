@@ -1,0 +1,11 @@
+#reddit {
+	grid-area: reddit;
+
+	.flair-button {
+		border-radius: 15px;
+		background-color: antiquewhite;
+		width: fit-content;
+		padding: 6px 10px;
+		color: honeydew;
+	}
+}

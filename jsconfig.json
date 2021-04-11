@@ -3,7 +3,11 @@
 		"target": "es2018",
 		"moduleResolution": "node",
 		"checkJs": true,
-		"jsx": "react"
+		"jsx": "react",
+		"allowUnreachableCode": false,
+		"allowUnusedLabels": false,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true
 	},
 	"exclude": ["node_modules"]
 }
