@@ -28,6 +28,8 @@ function RedditComponent() {
 					Chart
 				</div>
 			</div>
+
+			<div className='viewport'>PLACEHOLDER</div>
 		</section>
 	);
 }

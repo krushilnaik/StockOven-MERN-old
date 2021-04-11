@@ -3,7 +3,7 @@ import React from 'react';
 import '../scss/YahooComponent.scss';
 
 function YahooComponent() {
-	return <div id='yahoo'>Yahoo</div>;
+	return <section id='yahoo'>Yahoo</section>;
 }
 
 export default YahooComponent;
