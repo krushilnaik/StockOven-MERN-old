@@ -26,7 +26,12 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"format": "prettier --write \"{,!(node_modules)/**/}*.(mjs|js|json|css|scss|html)\""
+		"format": "prettier --write \"{,!(node_modules)/**/}*.(mjs|js|json|css|scss|html)\"",
+		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
+	},
+	"proxy": "http://localhost:3000",
+	"engines": {
+		"node": "14.16.0"
 	},
 	"eslintConfig": {
 		"extends": [
