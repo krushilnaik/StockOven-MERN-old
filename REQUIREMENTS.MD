@@ -1,6 +1,6 @@
 -  [x] Must use ReactJS in some way (even if minimal)
 -  [ ] Must use a Node and Express Web Server
-   -  [ ] Node
+   -  [x] Node
    -  [ ] Express
 -  [ ] Must be backed by a MySQL or MongoDB Database with a Sequelize or Mongoose ORM
 -  [ ] Must have both GET and POST routes for retrieving and adding new data
