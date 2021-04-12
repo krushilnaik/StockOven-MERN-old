@@ -6,4 +6,4 @@ const router = require('express').Router();
 
 // router.put
 
-export default router;
+module.exports = router;

@@ -1,23 +1,22 @@
-import express from 'express';
-import cors from 'cors';
-import path from 'path';
-import dotenv from 'dotenv';
+const express = require('express');
+const cors = require('cors');
+const path = require('path');
 
-import apiRoutes from './routes/api.routes';
+const apiRoutes = require('./routes/api.routes');
 
 // set up express
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // load environment variables
-dotenv.config();
+require('dotenv').config();
 
 // define middleware
 app.use(express.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, '../../public')));
 
-// set up routing
+// set up RESTful API
 app.use('/api', apiRoutes);
 
 // start server
