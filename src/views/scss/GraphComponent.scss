@@ -3,19 +3,24 @@
 	background-color: steelblue;
 	display: grid;
 	grid-template-rows: auto 4.5em;
+	gap: 10px;
 	justify-content: stretch;
 	align-items: stretch;
 
+	> * {
+		padding: 1.5%;
+		border-radius: 10px;
+	}
+
 	.apex-chart {
 		background-color: darkred;
-		border-radius: 10px;
-		padding: 1.5%;
 	}
 
 	.toggles {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		align-self: center;
+		align-self: stretch;
+		background-color: cornflowerblue;
 	}
 }

@@ -1,19 +1,15 @@
-* {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-	color: honeydew;
-}
+button {
+	transition: filter 0.2s;
+	filter: brightness(100%);
 
-body {
-	width: 100vw;
-	height: 100vh;
-	max-width: 100%;
-	max-height: 100%;
-	background-color: darkslategray;
+	&:hover {
+		cursor: pointer;
+		filter: brightness(120%);
+	}
 }
 
 #root {
+	background-color: darkcyan;
 	display: grid;
 	grid-template-rows: 3.5em auto 3.5em;
 	width: 100%;
@@ -25,6 +21,8 @@ body {
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
+		background-color: rgba(0, 0, 0, 0.2);
+		box-shadow: 0 0 5px #705454;
 	}
 }
 
@@ -40,5 +38,20 @@ body {
 		border-radius: 7px;
 		box-shadow: 1px 1px 3px #303030;
 		padding: 1.5%;
+	}
+}
+
+@media screen and (max-width: 1600px) {
+	.App {
+		grid-template-areas: 'reddit reddit' 'graph yahoo';
+		grid-template-columns: 3fr 2.5fr;
+	}
+}
+
+@media screen and (max-width: 1270px) {
+	.App {
+		grid-template-columns: 1fr;
+		grid-template-rows: 20em 23em 17em;
+		grid-template-areas: 'reddit' 'graph' 'yahoo';
 	}
 }
