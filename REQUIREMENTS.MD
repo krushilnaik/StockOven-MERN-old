@@ -14,4 +14,4 @@
 -  [ ] Must have a polished frontend/UI
 -  [x] Must have folder structure that meets MVC Paradigm
 -  [x] Must meet good quality coding standards (indentation, scoping, naming)
--  [ ] Must not expose sensitive API key information on the server
+-  [x] Must not expose sensitive API key information on the server
