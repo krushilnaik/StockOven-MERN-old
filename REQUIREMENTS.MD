@@ -8,6 +8,8 @@
    -  [ ] POST
 -  [ ] Must be deployed using Heroku (with Data)
 -  [ ] Must utilize at least two libraries, packages, or technologies that we haven’t discussed
+   -  [x] SCSS
+   -  [ ] ????
 -  [ ] Must allow for or involve the authentication of users in some way
 -  [ ] Must have a polished frontend/UI
 -  [x] Must have folder structure that meets MVC Paradigm
