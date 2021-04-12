@@ -1,32 +1,77 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import '../scss/RedditComponent.scss';
 
 function RedditComponent() {
+	const [flair, setFlair] = useState('');
+
+	/**
+	 * @param {React.SyntheticEvent<HTMLButtonElement>} event
+	 */
+	const handleClick = event => {
+		event.preventDefault();
+		setFlair(event.currentTarget.innerText.trim());
+	};
+
 	return (
 		<section id='reddit'>
 			<div className='navigation'>
-				<div className='flair-button' style={{ backgroundColor: '#365b8c' }} data-descr='Due Dilligence'>
+				<button
+					className='flair-button'
+					style={{ backgroundColor: '#365b8c' }}
+					onClick={handleClick}
+					data-descr='Due Dilligence'
+				>
 					DD
-				</div>
-				<div className='flair-button' style={{ backgroundColor: 'green' }} data-descr='People made it big'>
+				</button>
+				<button
+					className='flair-button'
+					style={{ backgroundColor: 'green' }}
+					onClick={handleClick}
+					data-descr='People made it big'
+				>
 					Gain
-				</div>
-				<div className='flair-button' style={{ backgroundColor: 'red' }} data-descr='People lost a lot'>
+				</button>
+				<button
+					className='flair-button'
+					style={{ backgroundColor: 'red' }}
+					onClick={handleClick}
+					data-descr='People lost a lot'
+				>
 					Loss
-				</div>
-				<div className='flair-button' style={{ backgroundColor: 'goldenrod' }} data-descr='Stock News'>
+				</button>
+				<button
+					className='flair-button'
+					style={{ backgroundColor: 'goldenrod' }}
+					onClick={handleClick}
+					data-descr='Stock News'
+				>
 					News
-				</div>
-				<div className='flair-button' style={{ backgroundColor: 'darkcyan' }} data-descr='Risky Positions'>
+				</button>
+				<button
+					className='flair-button'
+					style={{ backgroundColor: 'darkcyan' }}
+					onClick={handleClick}
+					data-descr='Risky Positions'
+				>
 					YOLO
-				</div>
-				<div className='flair-button' style={{ backgroundColor: 'rebeccapurple' }} data-descr='Talk about Stocks'>
+				</button>
+				<button
+					className='flair-button'
+					style={{ backgroundColor: 'rebeccapurple' }}
+					onClick={handleClick}
+					data-descr='Talk about Stocks'
+				>
 					Discussion
-				</div>
-				<div className='flair-button' style={{ backgroundColor: 'darkorange' }} data-descr='Graphs drawn by people'>
+				</button>
+				<button
+					className='flair-button'
+					style={{ backgroundColor: 'darkorange' }}
+					onClick={handleClick}
+					data-descr='Graphs drawn by people'
+				>
 					Chart
-				</div>
+				</button>
 			</div>
 
 			<div className='viewport'>PLACEHOLDER</div>
