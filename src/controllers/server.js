@@ -1,12 +1,16 @@
 import express from 'express';
 import cors from 'cors';
 import path from 'path';
+import dotenv from 'dotenv';
 
 import apiRoutes from './routes/api.routes';
 
 // set up express
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// load environment variables
+dotenv.config();
 
 // define middleware
 app.use(express.json());
