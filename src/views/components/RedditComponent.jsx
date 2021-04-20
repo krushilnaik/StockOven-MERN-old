@@ -65,7 +65,7 @@ function RedditComponent() {
 
 	const sortButtons = [
 		{ backgroundColor: '#365b8c', dataDescr: 'Due Dilligence', text: 'DD' },
-		{ backgroundColor: 'greren', dataDescr: 'People made it big', text: 'Gain' },
+		{ backgroundColor: 'green', dataDescr: 'People made it big', text: 'Gain' },
 		{ backgroundColor: 'red', dataDescr: 'People lost a lot', text: 'Loss' },
 		{ backgroundColor: 'goldenrod', dataDescr: 'Stock News', text: 'News' },
 		{ backgroundColor: 'darkcyan', dataDescr: 'Risky Positions', text: 'YOLO' },
