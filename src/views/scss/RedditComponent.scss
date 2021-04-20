@@ -32,7 +32,8 @@
 		height: 100%;
 		background-color: rgb(202, 17, 54);
 		display: grid;
-		justify-items: center;
+		gap: 6px;
+		overflow-y: auto;
 
 		.no-reddit {
 			justify-self: center;

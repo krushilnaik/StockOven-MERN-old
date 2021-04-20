@@ -5,12 +5,12 @@ import '../scss/RedditComponent.scss';
 import RedditPost from './RedditPost';
 
 /**
- * @typedef PostModel
- * @property {string} title - post title
- * @property {string} author - post author
- * @property {string} link_flair_text - post flair
+ * @typedef PostModel - abstraction of a Reddit post's JSON representation
+ * @property {string} title - post's title
+ * @property {string} author - post's author
+ * @property {string} link_flair_text - post's assigned flair
  * @property {string} permalink - link to post on reddit
- * @property {number} score - net score (upvotes - downvotes)
+ * @property {number} score - post's approximate net score (upvotes - downvotes)
  * @property {string} id - post's id, mainly to use as a key in a list of Components
  */
 

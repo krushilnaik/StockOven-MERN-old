@@ -23,6 +23,10 @@ function RedditPost(props) {
 				window.open(`https://www.reddit.com${permalink}`, '_blank');
 			}}
 		>
+			<img
+				src='https://cdn3.iconfinder.com/data/icons/social-media-black-white-2/512/BW_Reddit_glyph_svg-512.png'
+				alt='reddit logo'
+			/>
 			<h5 className='post-title'>{title}</h5>
 			<span className='post-author'>{author}</span>
 			<span className='post-score'>
