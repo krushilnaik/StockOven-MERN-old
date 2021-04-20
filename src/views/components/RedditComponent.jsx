@@ -1,9 +1,39 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useEffect, useRef, useState } from 'react';
 
 import '../scss/RedditComponent.scss';
+import RedditPost from './RedditPost';
+
+/**
+ * @typedef PostModel
+ * @property {string} title - post title
+ * @property {string} author - post author
+ * @property {string} link_flair_text - post flair
+ * @property {string} permalink - link to post on reddit
+ * @property {number} score - net score (upvotes - downvotes)
+ * @property {string} id - post's id, mainly to use as a key in a list of Components
+ */
 
 function RedditComponent() {
 	const [flair, setFlair] = useState('');
+	const [loading, setLoading] = useState(true);
+
+	/**
+	 * @type {{current: PostModel[]}}
+	 */
+	let posts = useRef([]);
+
+	// make call to reddit's api
+	useEffect(() => {
+		axios
+			.get('https://www.reddit.com/r/wallstreetbets/hot.json')
+			.then(({ data }) => {
+				posts.current = data.data.children.map(data => data.data);
+			})
+			.then(_ => {
+				setLoading(false);
+			});
+	}, []);
 
 	/**
 	 * @param {React.SyntheticEvent<HTMLButtonElement>} event
@@ -12,6 +42,25 @@ function RedditComponent() {
 		event.preventDefault();
 		setFlair(event.currentTarget.innerText.trim());
 	};
+
+	/**
+	 * @param {{message: string}} props
+	 */
+	const NoReddit = props => {
+		const { message } = props;
+		return (
+			<div className='no-reddit'>
+				<img
+					className={loading ? 'loading' : ''}
+					src='https://cdn3.iconfinder.com/data/icons/social-media-black-white-2/512/BW_Reddit_glyph_svg-512.png'
+					alt='reddit logo'
+				/>
+				<span>{loading ? 'Fetching posts...' : message}</span>
+			</div>
+		);
+	};
+
+	let relevantPosts = posts.current.filter(post => post.link_flair_text === flair);
 
 	return (
 		<section id='reddit'>
@@ -74,7 +123,20 @@ function RedditComponent() {
 				</button>
 			</div>
 
-			<div className='viewport'>PLACEHOLDER</div>
+			<div className='viewport'>
+				{flair ? (
+					// attempt to display posts with the selected flair
+					relevantPosts.length !== 0 ? (
+						relevantPosts
+							.filter(post => post.link_flair_text === flair)
+							.map(props => React.createElement(RedditPost, props))
+					) : (
+						<NoReddit message={`No posts found under flair '${flair}'`} />
+					)
+				) : (
+					<NoReddit message="Pick a flair to view today's hot posts" />
+				)}
+			</div>
 		</section>
 	);
 }

@@ -1,0 +1,72 @@
+.reddit-post {
+	color: inherit;
+	position: relative;
+	font-family: Newsreader, serif;
+	background-color: #d84e4e;
+	border: none;
+	border-radius: 7px;
+	transition: 0.35s;
+	text-align: left;
+	max-width: 1000px;
+	padding: 0.3em 10em 0.25em 2.8em;
+
+	&::before {
+		content: '';
+		display: inline-block;
+		background-image: url(https://cdn3.iconfinder.com/data/icons/social-media-black-white-2/512/BW_Reddit_glyph_svg-512.png);
+		background-size: 2em;
+		height: 2em;
+		width: 2em;
+		position: absolute;
+		top: 50%;
+		left: 0.5%;
+		transition: filter 0.35s;
+		filter: invert(0);
+		transform: translate(0%, -50%);
+	}
+
+	&:hover {
+		background-color: #ff6080;
+		cursor: pointer;
+	}
+
+	&:hover::before {
+		filter: invert(0.9);
+	}
+
+	.post-title {
+		color: inherit;
+		background-color: rgba(0, 0, 0, 0.11);
+		width: min-content;
+		max-width: 80%;
+		border-radius: 7px;
+		margin: 0;
+		white-space: nowrap;
+		overflow: hidden;
+		padding: 1%;
+		text-overflow: ellipsis;
+	}
+
+	.post-author {
+		color: rgba(255, 255, 255, 0.6);
+		font-size: 0.75em;
+		max-width: 5em;
+		overflow: hidden;
+		margin-left: 1.2%;
+	}
+
+	.post-score {
+		color: inherit;
+		background-color: #ffffff1e;
+		color: honeydew;
+		padding: 0.3%;
+		position: absolute;
+		right: 1%;
+		top: 50%;
+		transform: translate(0, -50%);
+	}
+
+	.post-score i {
+		color: #00bb6d;
+	}
+}
