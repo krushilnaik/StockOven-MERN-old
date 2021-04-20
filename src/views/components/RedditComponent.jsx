@@ -48,6 +48,7 @@ function RedditComponent() {
 	 */
 	const NoReddit = props => {
 		const { message } = props;
+
 		return (
 			<div className='no-reddit'>
 				<img
@@ -62,82 +63,46 @@ function RedditComponent() {
 
 	let relevantPosts = posts.current.filter(post => post.link_flair_text === flair);
 
+	const sortButtons = [
+		{ backgroundColor: '#365b8c', dataDescr: 'Due Dilligence', text: 'DD' },
+		{ backgroundColor: 'greren', dataDescr: 'People made it big', text: 'Gain' },
+		{ backgroundColor: 'red', dataDescr: 'People lost a lot', text: 'Loss' },
+		{ backgroundColor: 'goldenrod', dataDescr: 'Stock News', text: 'News' },
+		{ backgroundColor: 'darkcyan', dataDescr: 'Risky Positions', text: 'YOLO' },
+		{ backgroundColor: 'rebeccapurple', dataDescr: 'Talk about Stocks', text: 'Discussion' },
+		{ backgroundColor: 'darkorange', dataDescr: 'Graphs drawn by people', text: 'Chart' }
+	];
+
 	return (
 		<section id='reddit'>
 			<div className='navigation'>
-				<button
-					className='flair-button'
-					style={{ backgroundColor: '#365b8c' }}
-					onClick={handleClick}
-					data-descr='Due Dilligence'
-				>
-					DD
-				</button>
-				<button
-					className='flair-button'
-					style={{ backgroundColor: 'green' }}
-					onClick={handleClick}
-					data-descr='People made it big'
-				>
-					Gain
-				</button>
-				<button
-					className='flair-button'
-					style={{ backgroundColor: 'red' }}
-					onClick={handleClick}
-					data-descr='People lost a lot'
-				>
-					Loss
-				</button>
-				<button
-					className='flair-button'
-					style={{ backgroundColor: 'goldenrod' }}
-					onClick={handleClick}
-					data-descr='Stock News'
-				>
-					News
-				</button>
-				<button
-					className='flair-button'
-					style={{ backgroundColor: 'darkcyan' }}
-					onClick={handleClick}
-					data-descr='Risky Positions'
-				>
-					YOLO
-				</button>
-				<button
-					className='flair-button'
-					style={{ backgroundColor: 'rebeccapurple' }}
-					onClick={handleClick}
-					data-descr='Talk about Stocks'
-				>
-					Discussion
-				</button>
-				<button
-					className='flair-button'
-					style={{ backgroundColor: 'darkorange' }}
-					onClick={handleClick}
-					data-descr='Graphs drawn by people'
-				>
-					Chart
-				</button>
+				{sortButtons.map(data => (
+					<button
+						className='flair-button'
+						style={{ backgroundColor: data.backgroundColor }}
+						onClick={handleClick}
+						data-descr={data.dataDescr}
+					>
+						{data.text}
+					</button>
+				))}
 			</div>
 
-			<div className='viewport'>
-				{flair ? (
-					// attempt to display posts with the selected flair
-					relevantPosts.length !== 0 ? (
-						relevantPosts
+			{flair ? (
+				// attempt to display posts with the selected flair
+				relevantPosts.length !== 0 ? (
+					<div className='viewport'>
+						{relevantPosts
 							.filter(post => post.link_flair_text === flair)
-							.map(props => React.createElement(RedditPost, props))
-					) : (
-						// if no posts were found, say so
-						<NoReddit message={`No posts found with flair '${flair}'`} />
-					)
+							.map(props => React.createElement(RedditPost, props))}
+					</div>
 				) : (
-					<NoReddit message="Pick a flair to view today's hot posts" />
-				)}
-			</div>
+					// if no posts were found, say so
+					<NoReddit message={`No posts found with flair '${flair}'`} />
+				)
+			) : (
+				<NoReddit message="Pick a flair to view today's hot posts" />
+			)}
 		</section>
 	);
 }

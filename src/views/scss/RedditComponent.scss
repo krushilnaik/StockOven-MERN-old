@@ -30,29 +30,30 @@
 	.viewport {
 		width: 100%;
 		height: 100%;
+		padding: 1%;
 		background-color: rgb(202, 17, 54);
 		display: grid;
 		grid-auto-rows: 3em;
 		gap: 6px;
 		overflow-y: auto;
+	}
 
-		.no-reddit {
-			justify-self: center;
-			height: min-content;
-			justify-content: center;
-			align-self: center;
-			display: grid;
+	.no-reddit {
+		justify-self: center;
+		height: min-content;
+		justify-content: center;
+		align-self: center;
+		display: grid;
 
-			> img {
-				height: 100px;
-				margin: auto;
-				margin-bottom: 10px;
-				filter: invert(0.75);
-			}
+		> img {
+			height: 100px;
+			margin: auto;
+			margin-bottom: 10px;
+			filter: invert(0.75);
+		}
 
-			> span {
-				font-size: large;
-			}
+		> span {
+			font-size: large;
 		}
 	}
 }
