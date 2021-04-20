@@ -28,7 +28,7 @@ function RedditComponent() {
 		axios
 			.get('https://www.reddit.com/r/wallstreetbets/hot.json')
 			.then(({ data }) => {
-				posts.current = data.data.children.map(data => data.data);
+				posts.current = data.data.children.map(({ data }) => data);
 			})
 			.then(_ => {
 				setLoading(false);
@@ -131,6 +131,7 @@ function RedditComponent() {
 							.filter(post => post.link_flair_text === flair)
 							.map(props => React.createElement(RedditPost, props))
 					) : (
+						// if no posts were found, say so
 						<NoReddit message={`No posts found under flair '${flair}'`} />
 					)
 				) : (
