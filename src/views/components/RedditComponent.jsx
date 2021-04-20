@@ -132,7 +132,7 @@ function RedditComponent() {
 							.map(props => React.createElement(RedditPost, props))
 					) : (
 						// if no posts were found, say so
-						<NoReddit message={`No posts found under flair '${flair}'`} />
+						<NoReddit message={`No posts found with flair '${flair}'`} />
 					)
 				) : (
 					<NoReddit message="Pick a flair to view today's hot posts" />

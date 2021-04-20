@@ -32,6 +32,7 @@
 		height: 100%;
 		background-color: rgb(202, 17, 54);
 		display: grid;
+		grid-auto-rows: 3em;
 		gap: 6px;
 		overflow-y: auto;
 
