@@ -7,12 +7,13 @@ import '../scss/ToggleGroup.scss';
  *
  * @param {{
  * 	id: string
- * 	values: string[]
+ * 	values: string[],
+ * 	description: string
  * }} props
  * @returns
  */
 function ToggleGroup(props) {
-	const { id, values } = props;
+	const { id, values, description } = props;
 	const [activeToggle, setActiveToggle] = useState(values[0]);
 	const animationRef = useRef(null);
 
@@ -35,7 +36,7 @@ function ToggleGroup(props) {
 	};
 
 	return (
-		<>
+		<div className='toggle-group'>
 			<div id={id} style={{ display: 'none' }}>
 				{values.map(value => (
 					<input
@@ -49,6 +50,7 @@ function ToggleGroup(props) {
 				))}
 			</div>
 
+			<div className='description'>{description}</div>
 			<div id={`${id}-labels`}>
 				<div id={`${id}-ui`} style={{ width: `${100 / values.length}%` }}></div>
 				<div className='modes'>
@@ -64,7 +66,7 @@ function ToggleGroup(props) {
 					))}
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }
 

@@ -8,8 +8,8 @@ function GraphComponent() {
 		<section id='graph'>
 			<div className='apex-chart'>PLACEHOLDER GRAPH</div>
 			<div className='toggles'>
-				<ToggleGroup id='ranges' values={['1d', '5d', '1mo']} />
-				<ToggleGroup id='intervals' values={['5m', '15m', '60m', '1d']} />
+				<ToggleGroup id='ranges' description='Days to render' values={['1d', '5d', '1mo']} />
+				<ToggleGroup id='intervals' description='Times per day' values={['5m', '15m', '60m', '1d']} />
 			</div>
 		</section>
 	);

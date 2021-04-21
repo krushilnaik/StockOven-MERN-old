@@ -1,34 +1,44 @@
-[id$='-labels'] {
-	background-color: steelblue;
-	border-radius: 12px;
+.toggle-group {
 	display: grid;
-	position: relative;
+	grid-template-rows: 15px auto;
+	gap: 0.45em;
 
-	* {
-		grid-row: 1;
-		text-align: center;
+	.description {
+		font-size: medium;
 	}
 
-	[id$='-ui'] {
-		z-index: 1;
-		position: absolute;
-		border-radius: inherit;
-		height: 100%;
-		background-color: brown;
-	}
-
-	.modes {
-		z-index: 2;
-		grid-column: 1 / -1;
-		padding: 3% 0;
+	[id$='-labels'] {
+		background-color: steelblue;
+		border-radius: 12px;
 		display: grid;
+		position: relative;
 
-		label {
-			transition: color 0.2s;
+		* {
+			grid-row: 1;
+			text-align: center;
+		}
 
-			&:hover {
-				cursor: pointer;
-				color: burlywood;
+		[id$='-ui'] {
+			z-index: 1;
+			position: absolute;
+			border-radius: inherit;
+			height: 100%;
+			background-color: brown;
+		}
+
+		.modes {
+			z-index: 2;
+			grid-column: 1 / -1;
+			padding: 3% 0;
+			display: grid;
+
+			label {
+				transition: color 0.2s;
+
+				&:hover {
+					cursor: pointer;
+					color: burlywood;
+				}
 			}
 		}
 	}
