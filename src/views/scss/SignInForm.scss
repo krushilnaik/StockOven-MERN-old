@@ -1,0 +1,30 @@
+$oven-height: 65vmin;
+$width-factor: 1.25;
+$dial-size: 2.75em;
+
+.sign-in {
+	background-color: rgb(228, 114, 72);
+	border-radius: 15px;
+	width: $oven-height * $width-factor;
+	height: $oven-height;
+	margin: auto;
+	padding: 0.75%;
+	box-shadow: 1px 1px 3px brown;
+
+	.controls {
+		display: grid;
+		grid-template-columns: $dial-size $dial-size;
+		gap: 10px;
+		justify-content: baseline;
+		padding-bottom: $dial-size * 0.2;
+		border-bottom: dashed 1px #cc1338;
+
+		.dial {
+			width: $dial-size;
+			height: $dial-size;
+			background-color: crimson;
+			border-radius: 50%;
+			text-align: center;
+		}
+	}
+}

@@ -6,7 +6,7 @@ import GraphComponent from './GraphComponent';
 import RedditComponent from './RedditComponent';
 import YahooComponent from './YahooComponent';
 import SearchBar from './SearchBar';
-import { Route } from 'react-router';
+import { Route, Switch } from 'react-router';
 import SignInForm from './SignInForm';
 
 function App() {
@@ -21,14 +21,16 @@ function App() {
 				<SearchBar />
 			</nav>
 
-			<div className='App'>
+			<Switch>
 				<Route exact path='/sign_in' render={() => <SignInForm />} />
 				<Route exact path='/'>
-					<RedditComponent />
-					<GraphComponent />
-					<YahooComponent />
+					<div className='App'>
+						<RedditComponent />
+						<GraphComponent />
+						<YahooComponent />
+					</div>
 				</Route>
-			</div>
+			</Switch>
 		</React.Fragment>
 	);
 }
