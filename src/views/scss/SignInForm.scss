@@ -1,15 +1,30 @@
 $oven-height: 65vmin;
 $width-factor: 1.25;
-$dial-size: 2.75em;
+$dial-size: 3.5em;
 
 .sign-in {
+	display: grid;
+	grid-template-rows: auto 1fr;
 	background-color: rgb(228, 114, 72);
 	border-radius: 15px;
 	width: $oven-height * $width-factor;
 	height: $oven-height;
 	margin: auto;
 	padding: 0.75%;
+	position: relative;
 	box-shadow: 1px 1px 3px brown;
+
+	&::before {
+		content: '';
+		width: 80%;
+		height: 1.5em;
+		background-color: burlywood;
+		position: absolute;
+		z-index: -1;
+		clip-path: polygon(0 100%, 0.75em 0, calc(100% - 0.75em) 0, 100% 100%);
+		left: 50%;
+		transform: translate(-50%, -1em);
+	}
 
 	.controls {
 		display: grid;
@@ -26,5 +41,14 @@ $dial-size: 2.75em;
 			border-radius: 50%;
 			text-align: center;
 		}
+	}
+
+	> form {
+		width: 95%;
+		height: 95%;
+		background-color: #cc1338;
+		border-radius: 7px;
+		align-self: center;
+		justify-self: center;
 	}
 }
