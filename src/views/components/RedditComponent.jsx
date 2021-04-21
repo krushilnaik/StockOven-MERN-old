@@ -78,6 +78,7 @@ function RedditComponent() {
 			<div className='navigation'>
 				{sortButtons.map(data => (
 					<button
+						key={data.text}
 						className='flair-button'
 						style={{ backgroundColor: data.backgroundColor }}
 						onClick={handleClick}
@@ -94,7 +95,9 @@ function RedditComponent() {
 					<div className='viewport'>
 						{relevantPosts
 							.filter(post => post.link_flair_text === flair)
-							.map(props => React.createElement(RedditPost, props))}
+							.map(props => (
+								<RedditPost key={props.id} {...props} />
+							))}
 					</div>
 				) : (
 					// if no posts were found, say so
