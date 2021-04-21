@@ -11,7 +11,7 @@
    -  [x] SCSS
    -  [ ] ????
 -  [ ] Must allow for or involve the authentication of users in some way
--  [ ] Must have a polished frontend/UI
+-  [x] Must have a polished frontend/UI
 -  [x] Must have folder structure that meets MVC Paradigm
 -  [x] Must meet good quality coding standards (indentation, scoping, naming)
 -  [x] Must not expose sensitive API key information on the server
