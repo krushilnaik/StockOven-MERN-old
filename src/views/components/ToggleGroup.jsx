@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import anime from 'animejs';
+import React, { useEffect, useRef, useState } from 'react';
 
 import '../scss/ToggleGroup.scss';
 
@@ -13,7 +14,17 @@ import '../scss/ToggleGroup.scss';
 function ToggleGroup(props) {
 	const { id, values } = props;
 	const [activeToggle, setActiveToggle] = useState(values[0]);
+	const animationRef = useRef(null);
+
 	const toggleWidth = `calc(${Math.max(...values.map(_v => _v.length))}em + 6px)`;
+
+	useEffect(() => {
+		animationRef.current = anime({
+			targets: `#${id}-ui`,
+			left: `${(100 / values.length) * values.indexOf(activeToggle)}%`,
+			duration: 350
+		});
+	});
 
 	/**
 	 * @param {React.SyntheticEvent<HTMLLabelElement>} event
@@ -32,20 +43,14 @@ function ToggleGroup(props) {
 						type='radio'
 						name={id}
 						value={value}
-						checked={value === activeToggle}
+						defaultChecked={value === activeToggle}
 						id={`${id}-${value}-label`}
 					/>
 				))}
 			</div>
 
 			<div id={`${id}-labels`}>
-				<div
-					id={`${id}-ui`}
-					style={{
-						width: `${100 / values.length}%`,
-						left: `${(100 / values.length) * values.indexOf(activeToggle)}%`
-					}}
-				></div>
+				<div id={`${id}-ui`} style={{ width: `${100 / values.length}%` }}></div>
 				<div className='modes'>
 					{values.map(value => (
 						<label

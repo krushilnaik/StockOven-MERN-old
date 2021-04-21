@@ -22,5 +22,14 @@
 		grid-column: 1 / -1;
 		padding: 3% 0;
 		display: grid;
+
+		label {
+			transition: color 0.2s;
+
+			&:hover {
+				cursor: pointer;
+				color: burlywood;
+			}
+		}
 	}
 }
