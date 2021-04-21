@@ -2,19 +2,12 @@
 	background-color: #539ad4;
 	border-radius: 7px;
 	display: grid;
-	grid-template-columns: 1.75em auto;
-	gap: 5px;
-	height: 2.3em;
-	padding: 0.2em;
-	align-items: center;
+	grid-template-columns: 2em auto;
+	height: 2em;
+	border: solid 1px #bebebe;
 	justify-items: center;
 
 	> svg {
-		border-right: solid 1px #b1b1a9;
-		height: 100%;
-		width: 100% !important;
-		padding-right: 5px;
-		padding-left: 5px;
 		margin: auto;
 
 		> path {
@@ -25,28 +18,34 @@
 			cursor: pointer;
 
 			> path {
-				fill: rgb(209, 196, 179);
+				fill: rgb(207, 201, 193);
 			}
 		}
 	}
 
-	> input {
+	.search-wrapper {
 		height: 100%;
-		border-radius: 5px;
-		border: none;
-		outline: none;
-		border: solid 1px #bebebe;
-		padding-left: 2%;
-		transition: background-color 0.2s;
-		background-color: rgba($color: white, $alpha: 0.1);
+		border-left: solid 1px #bebebe;
 
-		&:focus,
-		&:hover {
-			background-color: rgba($color: white, $alpha: 0.3);
-		}
+		> input {
+			height: 100%;
+			width: 15em;
+			border-bottom-right-radius: 5px;
+			border-top-right-radius: 5px;
+			border: none;
+			outline: none;
+			padding-left: 7px;
+			transition: background-color 0.2s;
+			background-color: rgba($color: white, $alpha: 0);
 
-		&::placeholder {
-			color: honeydew;
+			&:focus,
+			&:hover {
+				background-color: rgba($color: white, $alpha: 0.15);
+			}
+
+			&::placeholder {
+				color: honeydew;
+			}
 		}
 	}
 }

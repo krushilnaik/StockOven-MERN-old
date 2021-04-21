@@ -26,14 +26,16 @@ function SearchBar() {
 	return (
 		<div className='search-bar'>
 			<FontAwesomeIcon icon={faSearch} type='button' onClick={handleClick} />
-			<input
-				type='text'
-				name='search'
-				id='search-field'
-				onChange={handleChange}
-				defaultValue={value}
-				placeholder='Search stock symbols:'
-			/>
+			<div className='search-wrapper'>
+				<input
+					type='text'
+					name='search'
+					id='search-field'
+					onChange={handleChange}
+					defaultValue={value}
+					placeholder='Search stocks: (e.g. TSLA)'
+				/>
+			</div>
 		</div>
 	);
 }

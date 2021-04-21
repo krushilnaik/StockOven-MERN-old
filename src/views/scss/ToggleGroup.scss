@@ -33,6 +33,7 @@
 
 			label {
 				transition: color 0.2s;
+				user-select: none;
 
 				&:hover {
 					cursor: pointer;
