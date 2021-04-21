@@ -1,0 +1,14 @@
+[id$='-labels'] {
+	background-color: steelblue;
+	padding: 1%;
+	border-radius: 10px;
+
+	.modes {
+		display: flex;
+		flex-basis: max-content;
+
+		* {
+			grid-row: 1;
+		}
+	}
+}
