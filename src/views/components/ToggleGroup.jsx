@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import '../scss/ToggleGroup.scss';
 
@@ -11,24 +11,49 @@ import '../scss/ToggleGroup.scss';
  * @returns
  */
 function ToggleGroup(props) {
+	const { id, values } = props;
+	const [activeToggle, setActiveToggle] = useState(values[0]);
+	const toggleWidth = `calc(${Math.max(...values.map(_v => _v.length))}em + 6px)`;
+
+	/**
+	 * @param {React.SyntheticEvent<HTMLLabelElement>} event
+	 */
+	const handleSelect = event => {
+		event.preventDefault();
+		setActiveToggle(event.currentTarget.innerText.trim());
+	};
+
 	return (
 		<>
-			<div id={props.id} style={{ display: 'none' }}>
-				{props.values.map(value => (
+			<div id={id} style={{ display: 'none' }}>
+				{values.map(value => (
 					<input
-						key={`${props.id}-${value}-label`}
+						key={`${id}-${value}-label`}
 						type='radio'
-						name={props.id}
-						id={`${props.id}-${value}-label`}
+						name={id}
+						value={value}
+						checked={value === activeToggle}
+						id={`${id}-${value}-label`}
 					/>
 				))}
 			</div>
 
-			<div id={`${props.id}-labels`}>
-				<div id={`${props.id}-ui`}></div>
+			<div id={`${id}-labels`}>
+				<div
+					id={`${id}-ui`}
+					style={{
+						width: `${100 / values.length}%`,
+						left: `${(100 / values.length) * values.indexOf(activeToggle)}%`
+					}}
+				></div>
 				<div className='modes'>
-					{props.values.map(value => (
-						<label key={`${props.id}-${value}-label`} htmlFor={`${props.id}-${value}-label`}>
+					{values.map(value => (
+						<label
+							key={`${id}-${value}-label`}
+							htmlFor={`${id}-${value}-label`}
+							onClick={handleSelect}
+							style={{ width: toggleWidth }}
+						>
 							{value}
 						</label>
 					))}
