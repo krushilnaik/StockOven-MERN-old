@@ -27,8 +27,11 @@ $dial-size: 3.5em;
 	}
 
 	.controls {
+		margin: auto;
 		display: grid;
-		grid-template-columns: $dial-size $dial-size;
+		width: 100%;
+		padding: 0 10%;
+		grid-template-columns: repeat(2, $dial-size) 1fr repeat(2, $dial-size);
 		gap: 10px;
 		justify-content: baseline;
 		padding-bottom: $dial-size * 0.2;
@@ -52,6 +55,11 @@ $dial-size: 3.5em;
 				width: 100%;
 				padding: 25%;
 			}
+		}
+
+		> h1 {
+			align-self: center;
+			justify-self: center;
 		}
 	}
 

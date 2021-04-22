@@ -28,30 +28,38 @@ function SignInForm() {
 			: setPassword(event.currentTarget.value);
 	};
 
+	const ControlPanel = () => (
+		<div className='controls'>
+			<div
+				className='dial'
+				onClick={() => {
+					setPage('Sign in');
+				}}
+			>
+				<FontAwesomeIcon icon={faSignInAlt} />
+			</div>
+			<div
+				className='dial'
+				onClick={() => {
+					setPage('Create user');
+				}}
+			>
+				<FontAwesomeIcon icon={faPlus} />
+			</div>
+
+			<h1>{page}</h1>
+
+			<div className='dial'></div>
+			<div className='dial'></div>
+		</div>
+	);
+
 	return (
 		<div className='sign-in'>
-			<div className='controls'>
-				<div
-					className='dial'
-					onClick={() => {
-						setPage('Sign in');
-					}}
-				>
-					<FontAwesomeIcon icon={faSignInAlt} />
-				</div>
-				<div
-					className='dial'
-					onClick={() => {
-						setPage('Create user');
-					}}
-				>
-					<FontAwesomeIcon icon={faPlus} />
-				</div>
-			</div>
+			<ControlPanel />
 
 			<div className='form-wrapper'>
 				<form>
-					<h1>{page}</h1>
 					<input
 						type='text'
 						defaultValue={username}
