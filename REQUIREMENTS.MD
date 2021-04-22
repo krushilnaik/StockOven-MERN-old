@@ -6,7 +6,7 @@
 -  [ ] Must have both GET and POST routes for retrieving and adding new data
    -  [ ] GET
    -  [ ] POST
--  [ ] Must be deployed using Heroku (with Data)
+-  [x] Must be deployed using ~~Heroku (with Data)~~ Netlify
 -  [x] Must utilize at least two libraries, packages, or technologies that we haven’t discussed
    -  [x] SCSS
    -  [x] AnimeJS
