@@ -13,6 +13,11 @@ body {
 }
 
 #root {
+	display: grid;
+	grid-template-rows: 3.5em auto 3.5em;
+	background-color: darkcyan;
+	width: 100%;
+	min-height: 100%;
 	position: relative;
 	z-index: 1;
 }
