@@ -2,13 +2,13 @@ import React from 'react';
 import { Route, Switch } from 'react-router';
 
 import GraphComponent from './GraphComponent';
-import RedditComponent from './RedditComponent';
-import YahooComponent from './YahooComponent';
 import NavBar from './NavBar';
+import PageNotFound from './PageNotFound';
+import RedditComponent from './RedditComponent';
 import SignInForm from './SignInForm';
+import YahooComponent from './YahooComponent';
 
 import '../scss/App.scss';
-import PageNotFound from './PageNotFound';
 
 function App() {
 	return (
