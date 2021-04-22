@@ -12,9 +12,13 @@ import '../scss/App.scss';
 function App() {
 	let history = useHistory();
 
+	/**
+	 * @param {React.SyntheticEvent<HTMLButtonElement>} event
+	 */
 	// @ts-ignore
 	const logOut = event => {
 		// log user out
+
 		// redirect to sign in page
 		history.push('/sign_in');
 	};
@@ -24,7 +28,7 @@ function App() {
 			<NavBar />
 
 			<Switch>
-				<Route exact path='/sign_in' render={() => <SignInForm />} />
+				<Route exact path='/(sign[_ -]{0,1}in)' render={() => <SignInForm />} />
 				<Route exact path='/'>
 					<div className='App'>
 						<RedditComponent />
