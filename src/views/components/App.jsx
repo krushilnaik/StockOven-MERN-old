@@ -6,10 +6,19 @@ import GraphComponent from './GraphComponent';
 import RedditComponent from './RedditComponent';
 import YahooComponent from './YahooComponent';
 import SearchBar from './SearchBar';
-import { Route, Switch } from 'react-router';
+import { Route, Switch, useHistory } from 'react-router';
 import SignInForm from './SignInForm';
 
 function App() {
+	let history = useHistory();
+
+	// @ts-ignore
+	const logOut = event => {
+		// log user out
+		// redirect to sign in page
+		history.push('/sign_in');
+	};
+
 	return (
 		<React.Fragment>
 			<nav>

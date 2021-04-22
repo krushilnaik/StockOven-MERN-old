@@ -21,7 +21,7 @@ $dial-size: 3.5em;
 		background-color: burlywood;
 		position: absolute;
 		z-index: -1;
-		clip-path: polygon(0 100%, 0.75em 0, calc(100% - 0.75em) 0, 100% 100%);
+		clip-path: polygon(0% 100%, 3% 0%, 33% 0%, 36% 100%, 66% 100%, 69% 0%, 97% 0%, 100% 100%);
 		left: 50%;
 		transform: translate(-50%, -1em);
 	}
@@ -38,17 +38,56 @@ $dial-size: 3.5em;
 			width: $dial-size;
 			height: $dial-size;
 			background-color: crimson;
+			transition: 0.2s;
 			border-radius: 50%;
 			text-align: center;
+
+			&:hover {
+				cursor: pointer;
+				background-color: #ec4141;
+			}
+
+			svg {
+				height: 100%;
+				width: 100%;
+				padding: 25%;
+			}
 		}
 	}
 
-	> form {
-		width: 95%;
-		height: 95%;
+	.form-wrapper {
+		display: grid;
+		align-items: center;
+		justify-content: center;
 		background-color: #cc1338;
-		border-radius: 7px;
 		align-self: center;
 		justify-self: center;
+		width: 95%;
+		height: 95%;
+
+		> form {
+			display: grid;
+			grid-auto-rows: 2em;
+			width: 55%;
+
+			> h1 {
+				text-align: center;
+			}
+
+			> input {
+				border: none;
+				outline: none;
+				border-radius: 7px;
+				font-size: large;
+				padding: 10px 5px;
+				height: 1.5em;
+			}
+
+			> button {
+				border-radius: 7px;
+				border: none;
+				outline: none;
+			}
+		}
 	}
 }
