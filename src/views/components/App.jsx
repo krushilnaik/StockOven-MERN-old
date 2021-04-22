@@ -8,6 +8,7 @@ import NavBar from './NavBar';
 import SignInForm from './SignInForm';
 
 import '../scss/App.scss';
+import PageNotFound from './PageNotFound';
 
 function App() {
 	return (
@@ -23,6 +24,7 @@ function App() {
 						<YahooComponent />
 					</div>
 				</Route>
+				<Route path='*' render={() => <PageNotFound />} />
 			</Switch>
 		</React.Fragment>
 	);
