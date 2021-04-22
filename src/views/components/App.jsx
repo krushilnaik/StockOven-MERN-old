@@ -4,7 +4,7 @@ import { Route, Switch, useHistory } from 'react-router';
 import GraphComponent from './GraphComponent';
 import RedditComponent from './RedditComponent';
 import YahooComponent from './YahooComponent';
-import SearchBar from './SearchBar';
+import NavBar from './NavBar';
 import SignInForm from './SignInForm';
 
 import '../scss/App.scss';
@@ -21,14 +21,7 @@ function App() {
 
 	return (
 		<React.Fragment>
-			<nav>
-				<div className='left'>
-					<img src='' alt='' id='logo' />
-					<span id='brand-name'>StockOven</span>
-				</div>
-
-				<SearchBar />
-			</nav>
+			<NavBar />
 
 			<Switch>
 				<Route exact path='/sign_in' render={() => <SignInForm />} />
