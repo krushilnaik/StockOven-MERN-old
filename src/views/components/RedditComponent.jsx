@@ -37,6 +37,7 @@ function RedditComponent() {
 	}, []);
 
 	/**
+	 * TODO: select (and de-select) multiple flairs
 	 * @param {React.SyntheticEvent<HTMLButtonElement>} event
 	 */
 	const handleClick = event => {
