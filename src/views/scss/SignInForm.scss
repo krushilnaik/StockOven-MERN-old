@@ -75,18 +75,37 @@ $dial-size: 3.5em;
 			}
 
 			> input {
+				background-color: rgba($color: white, $alpha: 0.18);
 				border: none;
 				outline: none;
 				border-radius: 7px;
 				font-size: large;
 				padding: 10px 5px;
 				height: 1.5em;
+				transition: background-color 0.2s;
+
+				&:focus,
+				&:hover {
+					background-color: rgba($color: white, $alpha: 0.3);
+				}
+
+				&::placeholder {
+					color: honeydew;
+				}
 			}
 
 			> button {
 				border-radius: 7px;
 				border: none;
 				outline: none;
+				user-select: none;
+
+				background-color: steelblue;
+
+				&:hover {
+					filter: brightness(105%);
+					box-shadow: 0 0 2px lightcyan;
+				}
 			}
 		}
 	}
