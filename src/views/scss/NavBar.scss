@@ -6,4 +6,29 @@ nav {
 	align-items: center;
 	background-color: rgba(0, 0, 0, 0.2);
 	box-shadow: 0 0 5px #705454;
+
+	.left {
+		a {
+			transition: color 0.2s;
+			text-decoration: none;
+
+			&:hover {
+				color: crimson;
+			}
+		}
+	}
+
+	.right {
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+		gap: 10px;
+
+		.user-settings {
+			width: 3em;
+			height: 3em;
+			border-radius: 50%;
+			border: none;
+		}
+	}
 }

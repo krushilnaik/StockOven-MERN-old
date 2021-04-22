@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link, useHistory } from 'react-router-dom';
 
 import SearchBar from './SearchBar';
 
 import '../scss/NavBar.scss';
-import { Link } from 'react-router-dom';
 
+/**
+ * TODO: only display search bar when logged in
+ */
 function NavBar() {
 	let history = useHistory();
 
@@ -24,11 +27,13 @@ function NavBar() {
 		<nav>
 			<div className='left'>
 				<img src='' alt='' id='logo' />
-				<span id='brand-name'>StockOven</span>
+				<Link to='/'>StockOven</Link>
 			</div>
 
-			<SearchBar />
-			<Link to='/sign_in'>Sign in</Link>
+			<div className='right'>
+				<SearchBar />
+				<button className='user-settings' onClick={logOut}></button>
+			</div>
 		</nav>
 	);
 }
