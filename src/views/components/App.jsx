@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, useHistory } from 'react-router';
+import { Route, Switch } from 'react-router';
 
 import GraphComponent from './GraphComponent';
 import RedditComponent from './RedditComponent';
@@ -10,19 +10,6 @@ import SignInForm from './SignInForm';
 import '../scss/App.scss';
 
 function App() {
-	let history = useHistory();
-
-	/**
-	 * @param {React.SyntheticEvent<HTMLButtonElement>} event
-	 */
-	// @ts-ignore
-	const logOut = event => {
-		// log user out
-
-		// redirect to sign in page
-		history.push('/sign_in');
-	};
-
 	return (
 		<React.Fragment>
 			<NavBar />
