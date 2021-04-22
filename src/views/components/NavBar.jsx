@@ -3,6 +3,7 @@ import React from 'react';
 import SearchBar from './SearchBar';
 
 import '../scss/NavBar.scss';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
 	return (
@@ -13,6 +14,7 @@ function NavBar() {
 			</div>
 
 			<SearchBar />
+			<Link to='/sign_in'>Sign in</Link>
 		</nav>
 	);
 }

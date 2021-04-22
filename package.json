@@ -31,7 +31,7 @@
 		"server": "nodemon src/controllers/server",
 		"frontend": "react-scripts start",
 		"build": "react-scripts build",
-		"test": "yarn build && npx serve -s build",
+		"test": "yarn build && npx serve -l 8080 -s build",
 		"eject": "react-scripts eject",
 		"format": "prettier --write \"{,!(node_modules)/**/}*.(mjs|js|json|css|scss|html)\""
 	},
