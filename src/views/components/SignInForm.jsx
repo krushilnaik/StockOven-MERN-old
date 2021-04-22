@@ -1,6 +1,7 @@
 import { faPlus, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
+
+import OvenDial from './OvenDial';
 
 import '../scss/SignInForm.scss';
 
@@ -30,27 +31,13 @@ function SignInForm() {
 
 	const ControlPanel = () => (
 		<div className='controls'>
-			<div
-				className='dial'
-				onClick={() => {
-					setPage('Sign in');
-				}}
-			>
-				<FontAwesomeIcon icon={faSignInAlt} />
-			</div>
-			<div
-				className='dial'
-				onClick={() => {
-					setPage('Create user');
-				}}
-			>
-				<FontAwesomeIcon icon={faPlus} />
-			</div>
+			<OvenDial icon={faSignInAlt} onClick={() => setPage('Sign In')} />
+			<OvenDial icon={faPlus} onClick={() => setPage('Create User')} />
 
 			<h1>{page}</h1>
 
-			<div className='dial'></div>
-			<div className='dial'></div>
+			<OvenDial />
+			<OvenDial />
 		</div>
 	);
 
