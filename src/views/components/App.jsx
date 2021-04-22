@@ -1,13 +1,13 @@
 import React from 'react';
-
-import '../scss/App.scss';
+import { Route, Switch, useHistory } from 'react-router';
 
 import GraphComponent from './GraphComponent';
 import RedditComponent from './RedditComponent';
 import YahooComponent from './YahooComponent';
 import SearchBar from './SearchBar';
-import { Route, Switch, useHistory } from 'react-router';
 import SignInForm from './SignInForm';
+
+import '../scss/App.scss';
 
 function App() {
 	let history = useHistory();

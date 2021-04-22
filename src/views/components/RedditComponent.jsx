@@ -1,8 +1,9 @@
-import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
+import axios from 'axios';
+
+import RedditPost from './RedditPost';
 
 import '../scss/RedditComponent.scss';
-import RedditPost from './RedditPost';
 
 /**
  * @typedef PostModel - abstraction of a Reddit post's JSON representation

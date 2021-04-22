@@ -1,7 +1,8 @@
 import React from 'react';
 
-import '../scss/GraphComponent.scss';
 import ToggleGroup from './ToggleGroup';
+
+import '../scss/GraphComponent.scss';
 
 function GraphComponent() {
 	return (
