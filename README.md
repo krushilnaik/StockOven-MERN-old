@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9fe5fcbc-41e4-4e7e-bc7a-a7c3d9150190/deploy-status)](https://app.netlify.com/sites/stockoven/deploys)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
