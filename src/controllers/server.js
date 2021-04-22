@@ -1,8 +1,12 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const passport = require('passport');
+// const cookieSession = require('cookie-session');
 
-const apiRoutes = require('./routes/api.routes');
+// const apiRoutes = require('./routes/api.routes');
+const authRoutes = require('./routes/auth.routes');
+require('../config/passport.config');
 
 // set up express
 const app = express();
@@ -15,9 +19,13 @@ require('dotenv').config();
 app.use(express.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, '../../public')));
+// app.use(cookieSession({ name: 'stockoven', keys: ['key1', 'key2'] }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // set up RESTful API
-app.use('/api', apiRoutes);
+// app.use('/api', apiRoutes);
+app.use('/auth', authRoutes);
 
 // start server
 app.listen(process.env.PORT || 3000, () => console.log(`Running server on port ${PORT}`));
