@@ -56,6 +56,7 @@ function ToggleGroup(props) {
 				<div className='modes'>
 					{values.map(value => (
 						<label
+							className={value === activeToggle ? 'active' : ''}
 							key={`${id}-${value}-label`}
 							htmlFor={`${id}-${value}-label`}
 							onClick={handleSelect}

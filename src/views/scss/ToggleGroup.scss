@@ -1,15 +1,17 @@
+$toggle-radius: 12px;
+
 .toggle-group {
 	display: grid;
 	grid-template-rows: 15px auto;
 	gap: 0.45em;
 
 	.description {
-		font-size: medium;
+		font-size: 15px;
 	}
 
 	[id$='-labels'] {
 		background-color: steelblue;
-		border-radius: 12px;
+		border-radius: $toggle-radius;
 		display: grid;
 		position: relative;
 
@@ -28,16 +30,21 @@
 
 		.modes {
 			z-index: 2;
-			padding: 3% 0;
 			display: grid;
 
 			label {
-				transition: color 0.2s;
+				padding: 10% 0;
+				transition: 0.2s;
 				user-select: none;
 
 				&:hover {
 					cursor: pointer;
-					color: burlywood;
+					color: #dfc7a8;
+					border-radius: $toggle-radius;
+
+					&:not(.active) {
+						background-color: #59b2db;
+					}
 				}
 			}
 		}

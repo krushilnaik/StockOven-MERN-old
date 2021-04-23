@@ -76,6 +76,7 @@ $dial-size: 3.5em;
 
 		> form {
 			display: grid;
+			gap: 0.5em;
 			grid-auto-rows: 2em;
 			width: 55%;
 
@@ -103,10 +104,16 @@ $dial-size: 3.5em;
 				}
 			}
 
-			> button {
+			.sign-in-button {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 15em;
 				border-radius: 7px;
 				border: none;
 				outline: none;
+				text-decoration: none;
+				text-align: center;
 				user-select: none;
 
 				background-color: steelblue;
