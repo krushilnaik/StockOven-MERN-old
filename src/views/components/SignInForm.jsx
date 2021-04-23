@@ -47,6 +47,20 @@ function SignInForm() {
 
 			<div className='form-wrapper'>
 				<form>
+					<a
+						style={{ backgroundColor: 'steelblue' }}
+						className='sign-in-button'
+						href='http://localhost:3000/auth/google'
+					>
+						<p>Sign in with Google</p>
+					</a>
+					<a
+						style={{ backgroundColor: 'crimson' }}
+						className='sign-in-button'
+						href='http://localhost:3000/auth/yahoo'
+					>
+						Sign in with Reddit
+					</a>
 					<input
 						type='text'
 						defaultValue={username}
