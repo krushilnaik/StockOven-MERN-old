@@ -34,7 +34,7 @@
 		"test": "yarn build && npx serve -l 8080 -s build",
 		"eject": "react-scripts eject",
 		"format": "prettier --write \"{,!(node_modules)/**/}*.(mjs|js|json|css|scss|html)\"",
-		"heroku-postbuild": "npx serve -s build"
+		"heroku-postbuild": "yarn build && npx serve -s build"
 	},
 	"proxy": "https://stockoven.herokuapp.com:3000",
 	"eslintConfig": {
