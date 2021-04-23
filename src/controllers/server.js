@@ -4,13 +4,12 @@ const path = require('path');
 const passport = require('passport');
 // const cookieSession = require('cookie-session');
 
-// const apiRoutes = require('./routes/api.routes');
 const authRoutes = require('./routes/auth.routes');
 require('../config/passport.config');
 
 // set up express
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.SERVER_PORT || 3000;
 
 // load environment variables
 require('dotenv').config();
@@ -24,8 +23,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // set up RESTful API
-// app.use('/api', apiRoutes);
 app.use('/auth', authRoutes);
 
 // start server
-app.listen(process.env.PORT || 3000, () => console.log(`Running server on port ${PORT}`));
+app.listen(PORT, () => console.log(`Running server on port ${PORT}`));
