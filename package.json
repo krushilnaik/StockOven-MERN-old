@@ -33,9 +33,10 @@
 		"build": "react-scripts build",
 		"test": "yarn build && npx serve -l 8080 -s build",
 		"eject": "react-scripts eject",
-		"format": "prettier --write \"{,!(node_modules)/**/}*.(mjs|js|json|css|scss|html)\""
+		"format": "prettier --write \"{,!(node_modules)/**/}*.(mjs|js|json|css|scss|html)\"",
+		"heroku-postbuild": "npx serve -s build"
 	},
-	"proxy": "http://localhost:3000",
+	"proxy": "https://stockoven.herokuapp.com:3000",
 	"eslintConfig": {
 		"extends": [
 			"react-app",
