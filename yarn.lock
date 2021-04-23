@@ -8674,7 +8674,7 @@ passport-oauth2@1.x.x:
     uid2 "0.0.x"
     utils-merge "1.x.x"
 
-passport-oauth@1.x, passport-oauth@1.x.x:
+passport-oauth@1.x:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/passport-oauth/-/passport-oauth-1.0.0.tgz#90aff63387540f02089af28cdad39ea7f80d77df"
   integrity sha1-kK/2M4dUDwIImvKM2tOep/gNd98=
@@ -8694,14 +8694,6 @@ passport-strategy@1.x.x:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/passport-strategy/-/passport-strategy-1.0.0.tgz#b5539aa8fc225a3d1ad179476ddf236b440f52e4"
   integrity sha1-tVOaqPwiWj0a0XlHbd8ja0QPUuQ=
-
-passport-yahoo-oauth@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/passport-yahoo-oauth/-/passport-yahoo-oauth-0.2.0.tgz#afa28a64cfb6d9776f1f11f6eb2d9aba710487ae"
-  integrity sha1-r6KKZM+22XdvHxH26y2aunEEh64=
-  dependencies:
-    passport-oauth "1.x.x"
-    pkginfo "0.2.x"
 
 passport@^0.4.1:
   version "0.4.1"
@@ -8878,11 +8870,6 @@ pkg-up@3.1.0:
   integrity sha512-nDywThFk1i4BQK4twPQ6TA4RT8bDY96yeuCVBWL3ePARCiEKDRSrNGbFIgUJpLp+XeIR65v8ra7WuJOFUBtkMA==
   dependencies:
     find-up "^3.0.0"
-
-pkginfo@0.2.x:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/pkginfo/-/pkginfo-0.2.3.tgz#7239c42a5ef6c30b8f328439d9b9ff71042490f8"
-  integrity sha1-cjnEKl72wwuPMoQ52bn/cQQkkPg=
 
 pkginfo@0.3.x:
   version "0.3.1"
